@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset='utf-8'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="veridistyle.css">
+    <title>veridiam's page</title>
+  </head>
 
-        <title>veridiam's page</title>
-    </head>
-
-    <body>
+  <body>
     oh hai world
     <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-    <div id="twitchplayer"></div>
-    <script type="text/javascript">
-        var options = {
+    <div id="twitch-wrapper">
+      <div id="twitch">
+        <div id="twitchplayer"></div>
+        <script type="text/javascript">
+          var options = {
             width: 854,
             height: 480,
             channel: "veridiam"
-        };
-        var player = new Twitch.Player("twitchplayer", options);
-        player.addEventListener(Twitch.Player.PAUSE, () => { console.log('Player is paused!');});
-        player.addEventListener(Twitch.Player.OFFLINE, () => { console.log('Stream is OFFLINE');});
-        player.addEventListener(Twitch.Player.ONLINE, () => { console.log('Stream is ONLINE');});
-        if(player.getEnded()) {
+          };
+          var player = new Twitch.Player("twitchplayer", options);
+          player.addEventListener(Twitch.Player.PAUSE, () => { console.log('Player is paused!');});
+          player.addEventListener(Twitch.Player.OFFLINE, () => { console.log('Stream is OFFLINE');});
+          player.addEventListener(Twitch.Player.ONLINE, () => { console.log('Stream is ONLINE');});
+          if(player.getEnded()) {
             console.log('Stream is NOT LIVE');
-            document.getElementById("twitchplayer").style.display = 'none';
-        } else {
+            document.getElementById("twitch").style.display = 'none';
+          } else {
             console.log('Stream is LIVE');
-            document.getElementById("twitchplayer").style.display = 'block';
-        }
-    </script>
-
-    </body>
+            document.getElementById("twitch").style.display = 'block';
+          }
+        </script>
+        <iframe frameborder="0"
+          scrolling="no"
+          id="chat_embed"
+          src="http://www.twitch.tv/veridiam/chat"
+          height="480"
+          width="300">
+        </iframe>
+      </div>
+    </div>
+  </body>
 </html>

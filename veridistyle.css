@@ -1,0 +1,18 @@
+body {
+  background-color: #442244;
+  color: white;
+}
+
+#twitch {
+  white-space: nowrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#twitchplayer {
+  display: inline;
+}
+
+#chat_embed {
+  display: inline;
+}
