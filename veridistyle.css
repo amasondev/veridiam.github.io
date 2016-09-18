@@ -3,10 +3,13 @@ body {
   color: white;
 }
 
-#twitch {
-  white-space: nowrap;
+#twitch-wrapper{
   width: 50%;
   margin: 0 auto;
+}
+
+#twitch {
+  white-space: nowrap;
 }
 
 #twitchplayer {
